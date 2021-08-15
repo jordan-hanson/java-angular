@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-// import { Http, Response, Headers, RequestOptions } from '@angular/http';
-// import { Observable } from 'rxjs/Observable';
+import { EmployeeService } from '../employee.service';
+import { User } from '../models/user.model';
 
 @Component({
   selector: 'app-employees',
@@ -13,39 +13,29 @@ export class EmployeesComponent {
   managers = ["Denna Livingston", "Lloyd Hanson", "Lacee Marcus"]
   departments = ["Engineering", "Operations"]
 
+  constructor(private _employeeService: EmployeeService) { }
 
   employeeprofileForm = new FormGroup({
     firstName: new FormControl(''),
     lastName: new FormControl(''),
     code: new FormControl(''),
-    manager: new FormControl(''),
-    department: new FormControl(''),
   });
 
-  // constructor(private _http: Http) { }
-
-  // get(url: string): Observable < any > {
-  //     return this._http.get(url)
-  //              .map((response: Response) => <any>response.json()); 
-  // }
-
-  // post(url: string, model: any): Observable <any> {
-  //     let formData: FormData = new FormData(); 
-  //     formData.append('id', model.id); 
-  //     formData.append('applicationName', model.applicationName); 
-  //     return this._http.post(url, formData)
-  //         .map((response: Response) => {
-  //             return response;
-  //         }).catch(console.log("error")); 
-  // }
+  userModel = new User(
+    this.employeeprofileForm.controls['firstName'].value,
+    this.employeeprofileForm.controls['lastName'].value,
+    this.employeeprofileForm.controls['code'].value)
 
   onSubmit() {
-    // all the form values
-    console.log(this.employeeprofileForm.value)
+    this.userModel = new User(
+      this.employeeprofileForm.controls['firstName'].value,
+      this.employeeprofileForm.controls['lastName'].value,
+      this.employeeprofileForm.controls['code'].value)
 
-    // value of the firstName
-    console.log(this.employeeprofileForm.controls['firstName'].value)
-
+    console.log(this.userModel)
+    this._employeeService.add(this.userModel).subscribe(
+      data => console.log("success", data),
+      error => console.log("error", error)
+    )
   }
-
 }

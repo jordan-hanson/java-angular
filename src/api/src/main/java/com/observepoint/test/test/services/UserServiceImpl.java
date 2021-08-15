@@ -45,15 +45,6 @@ public class UserServiceImpl implements UserService{
                 .orElseThrow(() -> new ResourceNotFoundException("User Id" + userId + "Not Found"));
     }
 
-    @Override
-    public User findUserByUserName(String userName)
-    {
-        User uu = userRepo.findByUsername(userName.toLowerCase());
-        if (uu == null) {
-            throw new ResourceNotFoundException("Username" + userName + "Not Found.");
-        }
-        return uu;
-    }
 
     @Transactional
     @Override
@@ -69,9 +60,7 @@ public class UserServiceImpl implements UserService{
         }
         newUserMade.setFirstname(newuser.getFirstname());
         newUserMade.setLastname(newuser.getLastname());
-        newUserMade.setUsername(newuser.getUsername().toLowerCase());
-        newUserMade.setPrimaryemail(newuser.getPrimaryemail());
-        newUserMade.setPassword(newuser.getPassword());
+        newUserMade.setCode(newuser.getCode());
 
         newUserMade.getRoles()
                 .clear();
@@ -103,17 +92,9 @@ public class UserServiceImpl implements UserService{
         {
             existingUser.setLastname(updateUser.getLastname().toLowerCase());
         }
-        if (updateUser.getUsername() != null)
+        if (updateUser.getCode() != null)
         {
-            existingUser.setUsername(updateUser.getUsername().toLowerCase());
-        }
-        if (updateUser.getPrimaryemail() != null)
-        {
-            existingUser.setPrimaryemail(updateUser.getPrimaryemail().toLowerCase());
-        }
-        if (updateUser.getPassword() != null)
-        {
-            existingUser.setPassword(updateUser.getPassword());
+            existingUser.setCode(updateUser.getCode());
         }
 
         if (updateUser.getRoles()

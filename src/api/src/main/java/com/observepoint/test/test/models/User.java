@@ -17,7 +17,7 @@ public class User {
      */
     @Id
     @Column
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long userid;
 
     /**
@@ -33,22 +33,10 @@ public class User {
     private String lastname;
 
     /**
-     * The username (String).
+     * The code (Number).
      */
     @Column(unique = true)
-    private String username;
-
-    /**
-     * The primaryemail (String).
-     */
-    @Column(unique = true)
-    private String primaryemail;
-
-    /**
-     * The password (String).
-     */
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    private String password;
+    private Integer code;
 
     /**
      * Part of the join relationship between user and role
@@ -67,12 +55,10 @@ public class User {
     public User() {
     }
 
-    public User(String firstname, String lastname, String username, String primaryemail, String password) {
+    public User(String firstname, String lastname, Integer code) {
         this.firstname = firstname;
         this.lastname = lastname;
-        this.username = username;
-        this.primaryemail = primaryemail;
-        this.password = password;
+        this.code = code;
     }
 
     /**
@@ -125,57 +111,21 @@ public class User {
     }
 
     /**
-     * Getter for username
+     * Getter for code
      *
-     * @return the username (String) lowercase
+     * @return the code (Number) lowercase
      */
-    public String getUsername() {
-        return username;
+    public Integer getCode() {
+        return code;
     }
 
     /**
-     * setter for username
+     * setter for code
      *
-     * @param username the new username (String)
+     * @param code the new code (Number)
      */
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    /**
-     * Getter for primaryemail
-     *
-     * @return the primaryemail (String) lowercase
-     */
-    public String getPrimaryemail() {
-        return primaryemail;
-    }
-
-    /**
-     * setter for primaryemail
-     *
-     * @param primaryemail the new primaryemail (String)
-     */
-    public void setPrimaryemail(String primaryemail) {
-        this.primaryemail = primaryemail;
-    }
-
-    /**
-     * Getter for password
-     *
-     * @return the password (String)
-     */
-    public String getPassword() {
-        return password;
-    }
-
-    /**
-     * setter for password
-     *
-     * @param password the new password (String)
-     */
-    public void setPassword(String password) {
-        this.password = password;
+    public void setCode(Integer code) {
+        this.code = code;
     }
 
     /**

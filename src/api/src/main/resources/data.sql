@@ -1,14 +1,14 @@
-INSERT INTO departments(name) values ('engineering');
--- INSERT INTO departments(name) values ('operations');
-
+-- INSERT INTO tester(name) values ('engineering');
+-- INSERT INTO tester(name) values ('operations');
+INSERT INTO users(userid, firstname, lastname, code) values (1, 'Jordan', 'Tester', 12345);
 -- DELETE
 -- FROM users;
 --
 -- DELETE
 -- FROM roles;
 
--- INSERT INTO users(userid, firstname, lastname, username, primaryemail, password)
--- VALUES (1, 'EmployeeA', 'Tester', 'testemployeeT', 'testuserT@email.com', 'abcdef'),
+-- INSERT INTO users(userid, firstname, lastname, code) values (1, 'Jordan', 'Tester', 12345);
+
 --        (2, 'Manager', 'Tester', 'testmanager', 'testUserA@email.com', 'abcdef'),
 --        (3, 'EmployeeJ', 'Tester', 'testempolyeej', 'testEmployeeJ@email.com', 'abcdef'),
 --        (4, 'Abby', 'Tester', 'testemployeeA', 'testUserB@email.com', 'abcdef'),
@@ -32,3 +32,4 @@ INSERT INTO departments(name) values ('engineering');
 --       (6, 400),
 --       (7, 400),
 --       (8, 400);
+-- alter sequence hibernate_sequence restart with 20;

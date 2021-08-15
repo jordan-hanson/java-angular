@@ -37,15 +37,6 @@ public class UserController {
         return new ResponseEntity<>(user, HttpStatus.OK);
     }
 
-    //    Find User By Username
-    //    http://localhost:8080/users/user/username
-    @GetMapping(value = "/user/{userName}", produces = "application/json")
-    public ResponseEntity<?> getUserByUserName(@PathVariable String userName)
-    {
-        User user = userService.findUserByUserName(userName);
-        return new ResponseEntity<>(user, HttpStatus.OK);
-    }
-
     //    Add New User
     //    http://localhost:8080/users/user
     @PostMapping(value = "/user", consumes = "application/json")

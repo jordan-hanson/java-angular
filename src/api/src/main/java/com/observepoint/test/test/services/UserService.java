@@ -10,7 +10,6 @@ public interface UserService {
 
     User findUserById(long userId);
 
-    User findUserByUserName(String userName);
 
     User save(User newuser);
 
