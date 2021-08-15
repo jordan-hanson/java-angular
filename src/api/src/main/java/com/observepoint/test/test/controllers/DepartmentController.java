@@ -1,12 +1,17 @@
 package com.observepoint.test.test.controllers;
 
 import com.observepoint.test.test.models.Department;
+import com.observepoint.test.test.models.Department;
+import com.observepoint.test.test.services.DepartmentService;
 import com.observepoint.test.test.services.DepartmentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import java.net.URI;
 import java.util.List;
 
 @RestController
@@ -32,5 +37,35 @@ public class DepartmentController {
     {
         Department department = depoService.findDepartmentById(departmentId);
         return new ResponseEntity<>(department, HttpStatus.OK);
+    }
+    /**
+     * Given a complete Department object, create a new Department record
+     * <br>Example: <a href="http://localhost:8080/departments/department"></a>
+     *
+     * @param newDepartment A complete new Department object
+     * @return A location header with the URI to the newly created department and a status of CREATED
+     * @see DepartmentService#save(Department) DepartmentService.save(newDepartment)
+     */
+    @PostMapping(value = "/department",
+            consumes = "application/json")
+    public ResponseEntity<?> addNewDepartment(
+            @RequestBody
+                    Department newDepartment)
+    {
+        // ids are not recognized by the Post method
+        newDepartment.setDepartmentid(0);
+        newDepartment = depoService.save(newDepartment);
+
+        // set the location header for the newly created resource
+        HttpHeaders responseHeaders = new HttpHeaders();
+        URI newDepartmentURI = ServletUriComponentsBuilder.fromCurrentRequest()
+                .path("/{departmentid}")
+                .buildAndExpand(newDepartment.getDepartmentid())
+                .toUri();
+        responseHeaders.setLocation(newDepartmentURI);
+
+        return new ResponseEntity<>(null,
+                responseHeaders,
+                HttpStatus.CREATED);
     }
 }
