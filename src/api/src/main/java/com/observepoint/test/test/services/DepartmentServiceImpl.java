@@ -2,9 +2,6 @@ package com.observepoint.test.test.services;
 
 import com.observepoint.test.test.exceptions.ResourceNotFoundException;
 import com.observepoint.test.test.models.Department;
-import com.observepoint.test.test.models.Role;
-import com.observepoint.test.test.models.User;
-import com.observepoint.test.test.models.UserRoles;
 import com.observepoint.test.test.repositories.DepartmentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -43,10 +40,10 @@ public class DepartmentServiceImpl implements DepartmentService{
     public Department save(Department newDepartment) {
         Department newDepartmentMade = new Department();
 
-        if(newDepartment.getDepartmentid() != 0)
+        if(newDepartment.getId() != 0)
         {
-            depoRepo.findById(newDepartment.getDepartmentid());
-            newDepartmentMade.setDepartmentid(newDepartment.getDepartmentid());
+            depoRepo.findById(newDepartment.getId());
+            newDepartmentMade.setId(newDepartment.getId());
         }
         newDepartmentMade.setName(newDepartment.getName());
 

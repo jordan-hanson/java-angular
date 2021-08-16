@@ -16,20 +16,20 @@ export class EmployeesComponent {
   constructor(private _employeeService: EmployeeService) { }
 
   employeeprofileForm = new FormGroup({
-    firstName: new FormControl(''),
-    lastName: new FormControl(''),
+    firstname: new FormControl(''),
+    lastname: new FormControl(''),
     code: new FormControl(''),
   });
 
   userModel = new User(
-    this.employeeprofileForm.controls['firstName'].value,
-    this.employeeprofileForm.controls['lastName'].value,
+    this.employeeprofileForm.controls['firstname'].value,
+    this.employeeprofileForm.controls['lastname'].value,
     this.employeeprofileForm.controls['code'].value)
 
   onSubmit() {
     this.userModel = new User(
-      this.employeeprofileForm.controls['firstName'].value,
-      this.employeeprofileForm.controls['lastName'].value,
+      this.employeeprofileForm.controls['firstname'].value,
+      this.employeeprofileForm.controls['lastname'].value,
       this.employeeprofileForm.controls['code'].value)
 
     console.log(this.userModel)

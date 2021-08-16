@@ -66,7 +66,7 @@ public class UserServiceImpl implements UserService{
                 .clear();
         for (UserRoles ur : newuser.getRoles())
         {
-            Role role = roleService.findRoleById(ur.getRole().getRoleid());
+            Role role = roleService.findRoleById(ur.getRole().getId());
             UserRoles newUserRole = new UserRoles(
                     newUserMade,
                     role
@@ -104,8 +104,8 @@ public class UserServiceImpl implements UserService{
                     .clear();
             for (UserRoles ur: updateUser.getRoles())
             {
-                UserRoles addRole = userRoleRepo.findById(ur.getRole().getRoleid())
-                        .orElseThrow(() -> new EntityNotFoundException("Role id" + ur.getRole().getRoleid()));
+                UserRoles addRole = userRoleRepo.findById(ur.getRole().getId())
+                        .orElseThrow(() -> new EntityNotFoundException("Role id" + ur.getRole().getId()));
 
                 existingUser.getRoles()
                         .add(addRole);

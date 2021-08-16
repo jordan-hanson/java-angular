@@ -1,5 +1,5 @@
--- INSERT INTO tester(name) values ('engineering');
--- INSERT INTO tester(name) values ('operations');
+INSERT INTO departments(id, name) values (1, 'engineering');
+INSERT INTO departments(id, name) values (2, 'operations');
 INSERT INTO users(userid, firstname, lastname, code) values (1, 'Jordan', 'Tester', 12345);
 -- DELETE
 -- FROM users;
@@ -17,11 +17,11 @@ INSERT INTO users(userid, firstname, lastname, code) values (1, 'Jordan', 'Teste
 --        (7, 'Jacob', 'Tester', 'testemployeeJa', 'testUserE@email.com', 'abcdef'),
 --        (8, 'Jeff', 'Tester', 'testemployeeJe', 'testUserF@email.com', 'abcdef');
 --
--- INSERT INTO roles(roleid, name)
--- VALUES(100, 'ADMIN'),
---       (200, 'USER'),
---       (300, 'MANAGER'),
---       (400, 'EMPLOYEE');
+INSERT INTO roles(id, name)
+VALUES(100, 'ADMIN'),
+      (200, 'USER'),
+      (300, 'MANAGER'),
+      (400, 'EMPLOYEE');
 --
 -- INSERT INTO userroles(userid, roleid)
 -- VALUES(1, 400),

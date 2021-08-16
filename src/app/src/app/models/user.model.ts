@@ -1,18 +1,18 @@
 export class User {
 
     //Fields 
-    firstName: String
-    lastName: String
+    firstname: String
+    lastname: String
     code: Number
     // department: String
     // manager: String
 
-    constructor(firstName: String,
-        lastName: String,
+    constructor(firstname: String,
+        lastname: String,
         code: Number,
     ) {
-        this.firstName = firstName
-        this.lastName = lastName
+        this.firstname = firstname
+        this.lastname = lastname
         this.code = code
         // this.department = department
         // this.manager = manager

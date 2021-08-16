@@ -7,12 +7,12 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table(name = "roles")
+@Table(name="roles")
 public class Role {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long roleid;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
 
     @Column(unique = true)
     private String name;
@@ -38,12 +38,12 @@ public class Role {
         this.users = users;
     }
 
-    public long getRoleid() {
-        return roleid;
+    public long getId() {
+        return id;
     }
 
-    public void setRoleid(long roleid) {
-        this.roleid = roleid;
+    public void setId(long roleid) {
+        this.id = roleid;
     }
 
     public String getName() {

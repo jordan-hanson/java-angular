@@ -2,14 +2,14 @@ package com.observepoint.test.test.models;
 
 import javax.persistence.*;
 
-
 @Entity
-@Table(name = "departments")
+@Table(name="departments")
 public class Department {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long departmentid;
+    @Column
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
 
     @Column(unique = true)
     private String name;
@@ -21,12 +21,12 @@ public class Department {
         this.name = name;
     }
 
-    public long getDepartmentid() {
-        return departmentid;
+    public long getId() {
+        return id;
     }
 
-    public void setDepartmentid(long departmentid) {
-        this.departmentid = departmentid;
+    public void setId(long departmentid) {
+        this.id = departmentid;
     }
 
     public String getName() {

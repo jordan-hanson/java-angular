@@ -1,8 +1,6 @@
 package com.observepoint.test.test.controllers;
 
 import com.observepoint.test.test.models.Department;
-import com.observepoint.test.test.models.Department;
-import com.observepoint.test.test.services.DepartmentService;
 import com.observepoint.test.test.services.DepartmentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
@@ -53,14 +51,14 @@ public class DepartmentController {
                     Department newDepartment)
     {
         // ids are not recognized by the Post method
-        newDepartment.setDepartmentid(0);
+        newDepartment.setId(0);
         newDepartment = depoService.save(newDepartment);
 
         // set the location header for the newly created resource
         HttpHeaders responseHeaders = new HttpHeaders();
         URI newDepartmentURI = ServletUriComponentsBuilder.fromCurrentRequest()
                 .path("/{departmentid}")
-                .buildAndExpand(newDepartment.getDepartmentid())
+                .buildAndExpand(newDepartment.getId())
                 .toUri();
         responseHeaders.setLocation(newDepartmentURI);
 

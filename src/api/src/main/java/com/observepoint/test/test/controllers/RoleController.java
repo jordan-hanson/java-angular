@@ -99,14 +99,14 @@ public class RoleController
                     Role newRole)
     {
         // ids are not recognized by the Post method
-        newRole.setRoleid(0);
+        newRole.setId(0);
         newRole = roleService.save(newRole);
 
         // set the location header for the newly created resource
         HttpHeaders responseHeaders = new HttpHeaders();
         URI newRoleURI = ServletUriComponentsBuilder.fromCurrentRequest()
                 .path("/{roleid}")
-                .buildAndExpand(newRole.getRoleid())
+                .buildAndExpand(newRole.getId())
                 .toUri();
         responseHeaders.setLocation(newRoleURI);
 

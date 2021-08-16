@@ -35,7 +35,7 @@ public class User {
     /**
      * The code (Number).
      */
-    @Column(unique = true)
+    @Column
     private Integer code;
 
     /**

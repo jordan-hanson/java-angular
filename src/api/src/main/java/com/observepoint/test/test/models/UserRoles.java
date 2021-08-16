@@ -57,7 +57,7 @@ public class UserRoles implements Serializable {
         UserRoles that = (UserRoles) o;
 
         return ((user == null) ? 0 : user.getUserid()) == ((that.user == null) ? 0 : that.user.getUserid()) &&
-                ((role == null) ? 0 : role.getRoleid()) == ((that.role == null) ? 0 : that.role.getRoleid());
+                ((role == null) ? 0 : role.getId()) == ((that.role == null) ? 0 : that.role.getId());
     }
 
     @Override
