@@ -12,7 +12,7 @@ import { User } from '../models/user.model';
 export class EmployeesComponent {
 
   managers = ["Denna Livingston", "Lloyd Hanson", "Lacee Marcus"]
-  departments = ["Engineering", "Operations"]
+  departments = ["Engineering", "Operations", "Accounting"]
   result = [] as any;
 
 
@@ -45,7 +45,6 @@ export class EmployeesComponent {
       this.employeeprofileForm.controls['manager'].value,
       this.employeeprofileForm.controls['department'].value)
 
-    console.log(this.userModel)
     this._employeeService.add(this.userModel).subscribe(
       data => console.log("success", data),
       error => console.log("error", error)
@@ -54,7 +53,6 @@ export class EmployeesComponent {
 
   getUsers() {
     this._employeeService.getData().subscribe(data => {
-      console.log(data, 'response data')
       this.result = data
     }
     )

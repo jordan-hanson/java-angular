@@ -9,7 +9,7 @@ import { Department } from '../models/department.model';
   styleUrls: ['./reports.component.scss']
 })
 export class ReportsComponent {
-  departments = ["Engineering", "Operations"]
+  departments = ["Engineering", "Operations", "Accounting"]
   result = [] as any;
   filtered = [] as any;
   constructor(private _reportsService: ReportsService) { }
@@ -30,11 +30,13 @@ export class ReportsComponent {
   getFiltered() {
     this.departmentModel = new Department(
       this.filteredDataForm.controls['department'].value)
+    this.filtered.length = 0
     this.result.forEach((element: any) => {
       if (this.departmentModel.department === element.department) {
         this.filtered.push(element)
-      } else { this.filtered.length = 0 }
+      }
     });
   }
+
 
 }

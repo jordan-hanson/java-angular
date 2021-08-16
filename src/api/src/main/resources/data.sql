@@ -1,35 +1,23 @@
-INSERT INTO departments(id, name) values (1, 'engineering');
-INSERT INTO departments(id, name) values (2, 'operations');
-INSERT INTO users(userid, firstname, lastname, code, department, manager) values (1, 'Jordan', 'Tester', 12345, 'Operations', 'Denna Livingston');
--- DELETE
--- FROM users;
---
--- DELETE
--- FROM roles;
+INSERT INTO departments(id, name) values (1, 'Engineering');
+INSERT INTO departments(id, name) values (2, 'Operations');
+INSERT INTO departments(id, name) values (3, 'Accounting');
 
--- INSERT INTO users(userid, firstname, lastname, code) values (1, 'Jordan', 'Tester', 12345);
 
---        (2, 'Manager', 'Tester', 'testmanager', 'testUserA@email.com', 'abcdef'),
---        (3, 'EmployeeJ', 'Tester', 'testempolyeej', 'testEmployeeJ@email.com', 'abcdef'),
---        (4, 'Abby', 'Tester', 'testemployeeA', 'testUserB@email.com', 'abcdef'),
---        (5, 'Katelyn', 'Tester', 'testemployeeK', 'testUserC@email.com', 'abcdef'),
---        (6, 'Tyler', 'Tester', 'testemployeeTy', 'testUserD@email.com', 'abcdef'),
---        (7, 'Jacob', 'Tester', 'testemployeeJa', 'testUserE@email.com', 'abcdef'),
---        (8, 'Jeff', 'Tester', 'testemployeeJe', 'testUserF@email.com', 'abcdef');
+INSERT INTO users(userid, firstname, lastname, code, department, manager) values (1, 'Jordan', 'Tester', 12, 'Operations', 'Denna Livingston');
+INSERT INTO users(userid, firstname, lastname, code, department, manager) values (2, 'Abby', 'Tester', 123, 'Operations', 'Lloyd Hanson');
+INSERT INTO users(userid, firstname, lastname, code, department, manager) values (3, 'Katelyn', 'Tester', 1234, 'Operations', 'Lacee Marcus');
+INSERT INTO users(userid, firstname, lastname, code, department, manager) values (4, 'Jackson', 'Tester', 12345, 'Operations', 'Denna Livingston');
+INSERT INTO users(userid, firstname, lastname, code, department, manager) values (5, 'Jenson', 'Tester', 45, 'Operations', 'Denna Livingston');
+INSERT INTO users(userid, firstname, lastname, code, department, manager) values (6, 'Erik', 'Tester', 345, 'Engineering', 'Lloyd Hanson');
+INSERT INTO users(userid, firstname, lastname, code, department, manager) values (7, 'Pam', 'Tester', 2345, 'Engineering', 'Lacee Marcus');
+INSERT INTO users(userid, firstname, lastname, code, department, manager) values (8, 'Deborah', 'Tester', 980, 'Engineering', 'Denna Livingston');
+INSERT INTO users(userid, firstname, lastname, code, department, manager) values (9, 'Camin', 'Tester', 124, 'Engineering', 'Lloyd Hanson');
+INSERT INTO users(userid, firstname, lastname, code, department, manager) values (10, 'Camie', 'Tester', 125, 'Accounting', 'Denna Livingston');
+INSERT INTO users(userid, firstname, lastname, code, department, manager) values (11, 'Jessica', 'Tester', 126, 'Accounting', 'Lloyd Hanson');
+INSERT INTO users(userid, firstname, lastname, code, department, manager) values (12, 'Zavier', 'Tester', 127, 'Accounting', 'Lacee Marcus');
 --
 INSERT INTO roles(id, name)
 VALUES(100, 'ADMIN'),
       (200, 'USER'),
       (300, 'MANAGER'),
       (400, 'EMPLOYEE');
---
--- INSERT INTO userroles(userid, roleid)
--- VALUES(1, 400),
---       (2, 300),
---       (3, 400),
---       (4, 400),
---       (5, 400),
---       (6, 400),
---       (7, 400),
---       (8, 400);
--- alter sequence hibernate_sequence restart with 20;

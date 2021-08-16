@@ -13,7 +13,6 @@ export class EmployeeService {
   constructor(private _http: HttpClient) { }
 
   add(user: User) {
-    console.log(user, 'user in post')
     return this._http.post<any>(this._url, user);
   }
 

@@ -29,9 +29,7 @@ export class ManageComponent implements OnInit {
   }
   getUsers() {
     this._employeeService.getData().subscribe(data => {
-      console.log(data, 'response data')
       this.result = data
-      console.log(this.result, 'result')
     }
     )
   }
