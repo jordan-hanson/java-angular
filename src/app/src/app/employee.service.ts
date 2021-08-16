@@ -16,4 +16,14 @@ export class EmployeeService {
     console.log(user, 'user in post')
     return this._http.post<any>(this._url, user);
   }
+
+  getData() {
+    let url = "http://localhost:8080/users/users"
+    return this._http.get(url)
+  }
+
+  // deleteUser(user: number) {
+  //   let url = "http://localhost:8080/users/user/1"
+  //   return this._http.delete(user)
+  // }
 }

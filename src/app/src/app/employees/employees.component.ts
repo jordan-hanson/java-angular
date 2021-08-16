@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { FormControl, FormGroup } from '@angular/forms';
 import { EmployeeService } from '../employee.service';
 import { User } from '../models/user.model';
@@ -12,8 +13,10 @@ export class EmployeesComponent {
 
   managers = ["Denna Livingston", "Lloyd Hanson", "Lacee Marcus"]
   departments = ["Engineering", "Operations"]
+  result = [] as any;
 
-  constructor(private _employeeService: EmployeeService) { }
+
+  constructor(private router: Router, private _employeeService: EmployeeService) { }
 
   employeeprofileForm = new FormGroup({
     firstname: new FormControl(''),
@@ -30,6 +33,9 @@ export class EmployeesComponent {
     this.employeeprofileForm.controls['manager'].value,
     this.employeeprofileForm.controls['department'].value)
 
+  goHome() {
+    this.router.navigateByUrl('/home')
+  }
 
   onSubmit() {
     this.userModel = new User(
@@ -44,5 +50,19 @@ export class EmployeesComponent {
       data => console.log("success", data),
       error => console.log("error", error)
     )
+  }
+
+  getUsers() {
+    this._employeeService.getData().subscribe(data => {
+      console.log(data, 'response data')
+      this.result = data
+    }
+    )
+  }
+
+  deleteUser() {
+    // this._employeeService.deleteUser().subscribe(data => {
+    //   console.log(data)
+    // })
   }
 }

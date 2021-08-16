@@ -7,9 +7,9 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { EmployeesComponent } from './employees/employees.component';
 import { ManageComponent } from './manage/manage.component';
+import { ReportsComponent } from './reports/reports.component';
 
 import { MatButtonModule } from '@angular/material/button';
-import { from } from 'rxjs';
 import { ReactiveFormsModule } from '@angular/forms'
 
 @NgModule({
@@ -17,7 +17,8 @@ import { ReactiveFormsModule } from '@angular/forms'
     AppComponent,
     HomeComponent,
     EmployeesComponent,
-    ManageComponent
+    ManageComponent,
+    ReportsComponent
   ],
   imports: [
     BrowserModule,

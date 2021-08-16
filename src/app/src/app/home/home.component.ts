@@ -18,6 +18,6 @@ export class HomeComponent implements OnInit {
   }
 
   departmentClick() {
-    this.router.navigateByUrl('/employees')
+    this.router.navigateByUrl('/reports')
   }
 }

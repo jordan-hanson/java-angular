@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { EmployeeService } from '../employee.service';
 
 @Component({
   selector: 'app-manage',
@@ -8,7 +9,9 @@ import { Router } from '@angular/router';
 })
 export class ManageComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private _employeeService: EmployeeService) { }
+
+  result = [] as any;
 
   ngOnInit(): void {
   }
@@ -17,7 +20,19 @@ export class ManageComponent implements OnInit {
     this.router.navigateByUrl('/employees')
   }
 
+  goHome() {
+    this.router.navigateByUrl('/home')
+  }
+
   departmentClick() {
     this.router.navigateByUrl('/employees')
+  }
+  getUsers() {
+    this._employeeService.getData().subscribe(data => {
+      console.log(data, 'response data')
+      this.result = data
+      console.log(this.result, 'result')
+    }
+    )
   }
 }

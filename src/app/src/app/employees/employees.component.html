@@ -1,4 +1,4 @@
-<h2>Create a New Employee</h2>
+<h2>Create a New Employee:</h2>
 <form [formGroup]="employeeprofileForm" (ngSubmit)="onSubmit()">
   <label>
     Enter Firstname:
@@ -33,7 +33,7 @@
   </p>
 </form>
 
-<h2>Update Employee By Id</h2>
+<h2>Update Employee By Id:</h2>
 <form [formGroup]="employeeprofileForm" (ngSubmit)="onSubmit()">
   <label>
     Enter Firstname:
@@ -52,7 +52,7 @@
   </p>
 </form>
 
-<h2>Delete Employee By Id</h2>
+<h2>Delete Employee By Id:</h2>
 <form [formGroup]="employeeprofileForm" (ngSubmit)="onSubmit()">
   <label>
     Enter Employee Id:
@@ -63,40 +63,27 @@
   </p>
 </form>
 
-<!-- <h2>Assign Employee a Manager Role</h2>
-<form [formGroup]="employeeprofileForm" (ngSubmit)="onSubmit()">
-  <label>
-    Enter Firstname:
-    <input type="text" formControlName="firstname">
-  </label>
-  <label>
-    Enter Lastname:
-    <input type="text" formControlName="lastname">
-  </label>
-  <label>
-    Enter Employee Code:
-    <input type="number" formControlName="code">
-  </label>
-  <p>
-    <button type="submit">Add New Employee</button>
-  </p>
-</form>
+<h2>View all employees</h2>
+<button style="margin: 0 0 20px 0" (click)="getUsers()">View All Employees</button>
+<table border="1">
+  <tr>
+    <td>Id</td>
+    <td>Firstname</td>
+    <td>Lastname</td>
+    <td>Employee Code</td>
+    <td>Department</td>
+    <td>Manager</td>
+  </tr>
+  <tr *ngFor="let item of result">
+    <td>{{item.userid}}</td>
+    <td>{{item.firstname}}</td>
+    <td>{{item.lastname}}</td>
+    <td>{{item.code}}</td>
+    <td>{{item.department}}</td>
+    <td>{{item.manager}}</td>
+  </tr>
 
-<h2>Assign Employee to a Department</h2>
-<form [formGroup]="employeeprofileForm" (ngSubmit)="onSubmit()">
-  <label>
-    Enter Firstname:
-    <input type="text" formControlName="firstname">
-  </label>
-  <label>
-    Enter Lastname:
-    <input type="text" formControlName="lastname">
-  </label>
-  <label>
-    Enter Employee Code:
-    <input type="number" formControlName="code">
-  </label>
-  <p>
-    <button type="submit">Add New Employee</button>
-  </p>
-</form> -->
+</table>
+<div class="launch-task" style="padding: 20px 0 0 0">
+  <button mat-raised-button color="primary" (click)="goHome();">Return to Home</button>
+</div>
