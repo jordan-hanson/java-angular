@@ -6,6 +6,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { EmployeesComponent } from './employees/employees.component';
+import { ManageComponent } from './manage/manage.component';
+
 import { MatButtonModule } from '@angular/material/button';
 import { from } from 'rxjs';
 import { ReactiveFormsModule } from '@angular/forms'
@@ -14,7 +16,8 @@ import { ReactiveFormsModule } from '@angular/forms'
   declarations: [
     AppComponent,
     HomeComponent,
-    EmployeesComponent
+    EmployeesComponent,
+    ManageComponent
   ],
   imports: [
     BrowserModule,

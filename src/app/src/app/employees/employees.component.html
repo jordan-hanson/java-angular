@@ -1,25 +1,4 @@
-<h2>Manage Employees</h2>
-<!-- <div class="launch-task">
-  <button mat-raised-button color="primary">Add New Employee</button>
-</div>
-<div class="launch-task">
-  <button mat-raised-button color="primary">View All Employees</button>
-</div>
-<div class="launch-task">
-  <button mat-raised-button color="primary">Update Employee</button>
-</div>
-<div class="launch-task">
-  <button mat-raised-button color="primary">Delete Employee</button>
-</div> -->
-<!-- <form #addEmployeeForm="ngForm" (ngSubmit)="getValues(addEmployeeForm.value)">
-  <input type="text" ngModel name="firstname" placeholder="enter firstname">
-  <br><br>
-  <input type="text" ngModel name="lastname" placeholder="enter lastname">
-  <br><br>
-  <input type="text" ngModel name="username" placeholder="enter username">
-  <br><br>
-  <button>Add a new employee</button>
-</form> -->
+<h2>Create a New Employee</h2>
 <form [formGroup]="employeeprofileForm" (ngSubmit)="onSubmit()">
   <label>
     Enter Firstname:
@@ -33,23 +12,75 @@
     Enter Employee Code:
     <input type="number" formControlName="code">
   </label>
-  <!-- <label>
-    Assign a Department
-    <select formControlName="department">
-      <option *ngFor="let department of departments" [ngValue]="department">
-        {{department}}
-      </option>
-    </select>
-  </label>
-  <label>
-    Assign a Manager
-    <select formControlName="manager">
-      <option *ngFor="let manager of managers" [ngValue]="manager">
-        {{manager}}
-      </option>
-    </select>
-  </label> -->
   <p>
     <button type="submit">Add New Employee</button>
   </p>
 </form>
+
+<h2>Update Employee By Id</h2>
+<form [formGroup]="employeeprofileForm" (ngSubmit)="onSubmit()">
+  <label>
+    Enter Firstname:
+    <input type="text" formControlName="firstname">
+  </label>
+  <label>
+    Enter Lastname:
+    <input type="text" formControlName="lastname">
+  </label>
+  <label>
+    Enter Employee Code:
+    <input type="number" formControlName="code">
+  </label>
+  <p>
+    <button type="submit">Add New Employee</button>
+  </p>
+</form>
+
+<h2>Delete Employee By Id</h2>
+<form [formGroup]="employeeprofileForm" (ngSubmit)="onSubmit()">
+  <label>
+    Enter Employee Id:
+    <input type="number" formControlName="firstname">
+  </label>
+  <p>
+    <button type="submit">Delete Employee</button>
+  </p>
+</form>
+
+<!-- <h2>Assign Employee a Manager Role</h2>
+<form [formGroup]="employeeprofileForm" (ngSubmit)="onSubmit()">
+  <label>
+    Enter Firstname:
+    <input type="text" formControlName="firstname">
+  </label>
+  <label>
+    Enter Lastname:
+    <input type="text" formControlName="lastname">
+  </label>
+  <label>
+    Enter Employee Code:
+    <input type="number" formControlName="code">
+  </label>
+  <p>
+    <button type="submit">Add New Employee</button>
+  </p>
+</form>
+
+<h2>Assign Employee to a Department</h2>
+<form [formGroup]="employeeprofileForm" (ngSubmit)="onSubmit()">
+  <label>
+    Enter Firstname:
+    <input type="text" formControlName="firstname">
+  </label>
+  <label>
+    Enter Lastname:
+    <input type="text" formControlName="lastname">
+  </label>
+  <label>
+    Enter Employee Code:
+    <input type="number" formControlName="code">
+  </label>
+  <p>
+    <button type="submit">Add New Employee</button>
+  </p>
+</form> -->

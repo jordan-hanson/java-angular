@@ -1,19 +1,7 @@
 <h2>Tasks:</h2>
 <div class="launch-task">
-  <button mat-raised-button color="primary">Manage Employees</button>
+  <button mat-raised-button color="primary" (click)="manageClick();">Manage Employees</button>
 </div>
 <div class="launch-task">
-  <button mat-raised-button color="primary">Department Reports</button>
+  <button mat-raised-button color="primary" (click)="departmentClick();">Department Reports</button>
 </div>
-<div class="launch-task">
-  <button mat-raised-button color="primary">Test Reports</button>
-</div>
-<form>
-  <input type="text" name="firstname" placeholder="enter firstname">
-  <br><br>
-  <input type="text" name="lastname" placeholder="enter lastname">
-  <br><br>
-  <input type="text" name="username" placeholder="enter username">
-  <br><br>
-  <button>Add a new employee</button>
-</form>
