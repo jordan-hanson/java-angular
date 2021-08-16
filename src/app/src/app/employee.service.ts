@@ -21,8 +21,4 @@ export class EmployeeService {
     return this._http.get(url)
   }
 
-  // deleteUser(user: number) {
-  //   let url = "http://localhost:8080/users/user/1"
-  //   return this._http.delete(user)
-  // }
 }

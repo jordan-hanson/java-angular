@@ -57,10 +57,4 @@ export class EmployeesComponent {
     }
     )
   }
-
-  deleteUser() {
-    // this._employeeService.deleteUser().subscribe(data => {
-    //   console.log(data)
-    // })
-  }
 }
