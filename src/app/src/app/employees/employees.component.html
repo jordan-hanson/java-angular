@@ -33,36 +33,6 @@
   </p>
 </form>
 
-<h2>Update Employee By Id:</h2>
-<form [formGroup]="employeeprofileForm" (ngSubmit)="onSubmit()">
-  <label>
-    Enter Firstname:
-    <input type="text" formControlName="firstname">
-  </label>
-  <label>
-    Enter Lastname:
-    <input type="text" formControlName="lastname">
-  </label>
-  <label>
-    Enter Employee Code:
-    <input type="number" formControlName="code">
-  </label>
-  <p>
-    <button type="submit">Add New Employee</button>
-  </p>
-</form>
-
-<h2>Delete Employee By Id:</h2>
-<form [formGroup]="employeeprofileForm" (ngSubmit)="onSubmit()">
-  <label>
-    Enter Employee Id:
-    <input type="number" formControlName="firstname">
-  </label>
-  <p>
-    <button type="submit">Delete Employee</button>
-  </p>
-</form>
-
 <h2>View all employees</h2>
 <button style="margin: 0 0 20px 0" (click)="getUsers()">View All Employees</button>
 <table border="1">
