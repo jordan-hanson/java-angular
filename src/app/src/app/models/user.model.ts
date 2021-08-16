@@ -4,18 +4,20 @@ export class User {
     firstname: String
     lastname: String
     code: Number
-    // department: String
-    // manager: String
+    department: String
+    manager: String
 
     constructor(firstname: String,
         lastname: String,
         code: Number,
+        manager: String,
+        department: String
     ) {
         this.firstname = firstname
         this.lastname = lastname
         this.code = code
-        // this.department = department
-        // this.manager = manager
+        this.manager = manager
+        this.department = department
     }
 }
 

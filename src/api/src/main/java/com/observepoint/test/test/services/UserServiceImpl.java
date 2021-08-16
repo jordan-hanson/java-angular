@@ -61,6 +61,8 @@ public class UserServiceImpl implements UserService{
         newUserMade.setFirstname(newuser.getFirstname());
         newUserMade.setLastname(newuser.getLastname());
         newUserMade.setCode(newuser.getCode());
+        newUserMade.setDepartment(newuser.getDepartment());
+        newUserMade.setManager(newuser.getManager());
 
         newUserMade.getRoles()
                 .clear();

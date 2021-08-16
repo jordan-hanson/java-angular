@@ -9,7 +9,9 @@ CREATE TABLE users(
     userid int AUTO_INCREMENT PRIMARY KEY,
     firstname VARCHAR(255),
     lastname VARCHAR(255),
-    code int);
+    code int,
+    department VARCHAR(255),
+    manager VARCHAR(255));
 
 DROP TABLE IF EXISTS roles;
 CREATE TABLE roles(

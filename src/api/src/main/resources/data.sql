@@ -1,6 +1,6 @@
 INSERT INTO departments(id, name) values (1, 'engineering');
 INSERT INTO departments(id, name) values (2, 'operations');
-INSERT INTO users(userid, firstname, lastname, code) values (1, 'Jordan', 'Tester', 12345);
+INSERT INTO users(userid, firstname, lastname, code, department, manager) values (1, 'Jordan', 'Tester', 12345, 'Operations', 'Denna Livingston');
 -- DELETE
 -- FROM users;
 --

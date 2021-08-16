@@ -12,6 +12,22 @@
     Enter Employee Code:
     <input type="number" formControlName="code">
   </label>
+  <label>
+    Assign a Department
+    <select formControlName="department">
+      <option *ngFor="let department of departments" [ngValue]="department">
+        {{department}}
+      </option>
+    </select>
+  </label>
+  <label>
+    Assign a Manager
+    <select formControlName="manager">
+      <option *ngFor="let manager of managers" [ngValue]="manager">
+        {{manager}}
+      </option>
+    </select>
+  </label>
   <p>
     <button type="submit">Add New Employee</button>
   </p>

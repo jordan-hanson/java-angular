@@ -39,6 +39,18 @@ public class User {
     private Integer code;
 
     /**
+     * The department (String).
+     */
+    @Column
+    private String department;
+
+    /**
+     * The manager (String).
+     */
+    @Column
+    private String manager;
+
+    /**
      * Part of the join relationship between user and role
      * connects users to the user role combination
      */
@@ -55,10 +67,12 @@ public class User {
     public User() {
     }
 
-    public User(String firstname, String lastname, Integer code) {
+    public User(String firstname, String lastname, Integer code, String department, String manager) {
         this.firstname = firstname;
         this.lastname = lastname;
         this.code = code;
+        this.department = department;
+        this.manager = manager;
     }
 
     /**
@@ -126,6 +140,22 @@ public class User {
      */
     public void setCode(Integer code) {
         this.code = code;
+    }
+
+    public String getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(String department) {
+        this.department = department;
+    }
+
+    public String getManager() {
+        return manager;
+    }
+
+    public void setManager(String manager) {
+        this.manager = manager;
     }
 
     /**

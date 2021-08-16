@@ -19,18 +19,25 @@ export class EmployeesComponent {
     firstname: new FormControl(''),
     lastname: new FormControl(''),
     code: new FormControl(''),
+    manager: new FormControl(''),
+    department: new FormControl('')
   });
 
   userModel = new User(
     this.employeeprofileForm.controls['firstname'].value,
     this.employeeprofileForm.controls['lastname'].value,
-    this.employeeprofileForm.controls['code'].value)
+    this.employeeprofileForm.controls['code'].value,
+    this.employeeprofileForm.controls['manager'].value,
+    this.employeeprofileForm.controls['department'].value)
+
 
   onSubmit() {
     this.userModel = new User(
       this.employeeprofileForm.controls['firstname'].value,
       this.employeeprofileForm.controls['lastname'].value,
-      this.employeeprofileForm.controls['code'].value)
+      this.employeeprofileForm.controls['code'].value,
+      this.employeeprofileForm.controls['manager'].value,
+      this.employeeprofileForm.controls['department'].value)
 
     console.log(this.userModel)
     this._employeeService.add(this.userModel).subscribe(
