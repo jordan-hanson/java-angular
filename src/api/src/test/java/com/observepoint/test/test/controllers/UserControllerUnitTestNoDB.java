@@ -1,20 +1,20 @@
 package com.observepoint.test.test.controllers;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
+import com.observepoint.test.test.TestApplicationTests;
 import com.observepoint.test.test.models.User;
 import com.observepoint.test.test.repositories.UserRepository;
 import com.observepoint.test.test.services.UserService;
 import io.restassured.module.mockmvc.RestAssuredMockMvc;
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
-import org.springframework.
 import org.springframework.security.test.web.servlet.setup.SecurityMockMvcConfigurers;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
@@ -30,16 +30,13 @@ import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.ArgumentMatchers.anyString;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 // mocking service to test controller
 
 @RunWith(SpringRunner.class)
-//@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT,
-//        classes = test.class,
-//        properties = {
-//                "command.line.runner.enabled=false"})
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT,
+        classes = TestApplicationTests.class)
 @AutoConfigureMockMvc
 public class UserControllerUnitTestNoDB {
     @Autowired
@@ -110,7 +107,7 @@ public class UserControllerUnitTestNoDB {
         u5.setManager("Katelyn Miller");
         u5.setDepartment("Engineering");
         u5.setUserid(105);
-//        userList.add(u5);
+        userList.add(u5);
 
         System.out.println("\n*** Seed Data ***");
         for (User u : userList)
@@ -200,7 +197,7 @@ public class UserControllerUnitTestNoDB {
         String apiUrl = "/users/user/77";
 
         Mockito.when(userrepos.findById(u1.getUserid()))
-                .thenReturn(u1);
+                .thenReturn(java.util.Optional.ofNullable(u1));
 
         Mockito.when(userService.findUserById(77))
                 .thenReturn(null);
